@@ -94,12 +94,11 @@ function updateToolTip(chosenXAxis, circlesGroup) {
 }
 
 // Retrieve data from the CSV file and execute everything below
-d3.csv("static/data/data.csv").then(function (hairData, err) {
+d3.csv("hairData.csv").then(function (hairData, err) {
   if (err) throw err;
 
   // parse data
   hairData.forEach(function (data) {
-    console.log(data)
     data.hair_length = +data.poverty;
     data.num_hits = +data.healthcare;
     data.num_albums = +data.age;
@@ -147,7 +146,7 @@ d3.csv("static/data/data.csv").then(function (hairData, err) {
     .attr("y", 20)
     .attr("value", "hair_length") // value to grab for event listener
     .classed("active", true)
-    .text("Poverty (%) HAIR LENGTH");
+    .text("Poverty (%") HAIR LENGTH;
 
   var albumsLabel = labelsGroup.append("text")
     .attr("x", 0)
